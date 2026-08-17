@@ -174,6 +174,10 @@
       if (p.w < 1 || p.h < 1) { setTimeout(inicia, 120); return; }
       monta();
       if (reduce) { parada(); return; }
+      // Aba em segundo plano não roda animação. Pinta a marca formada para a
+      // área nunca ficar vazia; a varredura começa quando a aba receber foco.
+      if (document.hidden) { parada(); return; }
+      desenha(0);
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(quadro);
     }
@@ -185,10 +189,13 @@
     });
 
     // Pausa quando a aba sai de vista — não gasta bateria à toa.
+    // Ao voltar, recomeça do zero: quem chega vê a varredura inteira.
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) {
         if (raf) { cancelAnimationFrame(raf); raf = null; }
       } else if (!reduce && !raf) {
+        monta();
+        desenha(0);
         raf = requestAnimationFrame(quadro);
       }
     });
