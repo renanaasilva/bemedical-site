@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Be Medical — Equipamentos e software para análise de pele e capilar</title>
+<meta name="description" content="Um ecossistema de equipamentos e software para análise de pele e capilar. Mais precisão no diagnóstico, mais segurança na conduta, mais prova no resultado. Para dermatologia clínica e estética.">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Be Medical">
+<meta property="og:description" content="Um ecossistema de equipamentos e software para análise de pele e capilar. Para dermatologia clínica e estética.">
+<meta property="og:image" content="imagens/imagem_rigor.jpg">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap">
+<!-- ?v= evita cache antigo do navegador. Ao alterar css/js, incrementar o número. -->
+<link rel="stylesheet" href="assets/style.css?v=7">
+</head>
+
+<body id="topo">
+
+<header class="nav">
+  <a class="wordmark" href="#topo">
+    <img src="assets/logo-be-medical-wordmark.svg" alt="Be Medical" width="1325" height="223">
+  </a>
+  <nav aria-label="Navegação principal">
+    <a href="#precisao">precisão</a>
+    <a href="#contato">contato</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ==========================================================
+       ABERTURA — a primeira tela
+       Para trocar texto, altere apenas o que está entre > e <
+       ========================================================== -->
+  <section class="hero">
+    <canvas id="scan" aria-hidden="true"></canvas>
+    <div class="hero-text">
+      <h1>Um ecossistema de equipamentos e software <br>para análise de pele e capilar.</h1>
+      <p class="benefit">Mais precisão no diagnóstico, mais segurança na conduta, mais prova no resultado.</p>
+      <p class="audience">Para dermatologia clínica e estética</p>
+      <a class="btn btn-dark" href="#contato">Quero na minha clínica</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       PRECISÃO — título, frase e os três cards com as imagens
+       Para trocar uma imagem: substitua o arquivo na pasta imagens
+       mantendo o mesmo nome, ou troque o nome dentro de src="..."
+       ========================================================== -->
+  <section class="precisao" id="precisao">
+    <div class="wrap">
+      <h2>Precisão muda tudo <br>o que vem depois.</h2>
+      <p class="lead">O que se vê define o que se faz. E o que se faz define o resultado.</p>
+
+      <div class="cards">
+        <article class="card">
+          <img src="imagens/imagem_rigor.jpg" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Mão segurando um dermatoscópio apoiado sobre a pele do braço, com o anel de luz aceso.">
+          <span class="step">01</span>
+          <h3>Precisão no diagnóstico</h3>
+        </article>
+
+        <article class="card">
+          <img src="imagens/imagem_entendimento.jpg" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Profissional apontando para um monitor que mostra duas imagens ampliadas de pele lado a lado, com a paciente ao lado observando.">
+          <span class="step">02</span>
+          <h3>Segurança na conduta</h3>
+        </article>
+
+        <article class="card">
+          <img src="imagens/imagem_tempo.jpg" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Tablet exibindo quatro registros datados da mesma área de pele em sequência, com o mais recente selecionado.">
+          <span class="step">03</span>
+          <h3>Prova do resultado</h3>
+        </article>
+      </div>
+
+      <p class="disclaimer">Imagens ilustrativas.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================================
+     CONTATO E RODAPÉ
+     Os itens marcados com TROCAR ainda estão com dado de exemplo
+     ========================================================== -->
+<footer class="contato" id="contato">
+  <div class="wrap">
+    <h2>Vamos conversar.</h2>
+    <p class="lead-dark">Clínicas, médicos e fabricantes falam com a gente pelo mesmo canal.</p>
+
+    <div class="acoes">
+      <!-- TROCAR: número do WhatsApp no formato 55DDNNNNNNNNN -->
+      <a class="btn btn-light" href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Be%20Medical." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <!-- TROCAR: e-mail real -->
+      <a class="btn btn-ghost" href="mailto:contato@bemedical.com.br">Enviar um e-mail</a>
+    </div>
+
+    <div class="rodape">
+      <div>
+        <img class="wordmark-footer" src="assets/logo-be-medical-wordmark.svg" alt="Be Medical" width="1325" height="223">
+        <p>Imagem para análise de pele e capilar.<br>São Paulo, Brasil.</p>
+      </div>
+      <div>
+        <span class="rot">Contato</span>
+        <!-- TROCAR: e-mail e telefone reais -->
+        <p>contato@bemedical.com.br<br>+55 11 00000-0000</p>
+      </div>
+      <div>
+        <span class="rot">Empresa</span>
+        <!-- TROCAR: CNPJ e links reais -->
+        <p>CNPJ 00.000.000/0001-00<br>Instagram · LinkedIn</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/scan.js?v=5" defer></script>
+</body>
+</html>
