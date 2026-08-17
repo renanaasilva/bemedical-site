@@ -30,18 +30,14 @@ a{color:inherit;text-decoration:none}
 /* ---------- topo ---------- */
 .nav{
   position:sticky;top:0;z-index:10;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:16px;
-  padding:16px 24px;
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 24px;
   background:rgba(255,255,255,.86);
   backdrop-filter:saturate(180%) blur(14px);
   border-bottom:.5px solid var(--line);
 }
 .wordmark{display:block;line-height:0}
-.wordmark img{display:block;height:19px;width:auto}
-.nav nav{display:flex;gap:22px}
-.nav nav a{font-size:13px;color:var(--ink-soft);transition:color .2s}
-.nav nav a:hover{color:var(--ink)}
+.wordmark img{display:block;height:21px;width:auto}
 
 /* ---------- abertura ---------- */
 .hero{padding-bottom:clamp(56px,9vw,104px)}
@@ -66,20 +62,65 @@ h1{
   font-size:13px;font-weight:300;color:var(--muted);letter-spacing:.2px;
 }
 
-/* ---------- botões ---------- */
+/* ---------- botões ----------
+   A profundidade vem do movimento, não de sombra pesada: o botão sobe ao
+   passar o mouse e afunda ao clicar. O brilho interno no topo e a borda
+   escura embaixo dão a espessura. */
 .btn{
-  display:inline-block;
+  display:inline-block;position:relative;
   font-size:14px;font-weight:400;letter-spacing:.2px;
   padding:13px 28px;border-radius:980px;
-  transition:transform .18s ease,opacity .18s ease;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1),
+             box-shadow .22s cubic-bezier(.2,.7,.3,1);
 }
-.btn:active{transform:scale(.98)}
-.btn-dark{background:var(--ink);color:#fff;margin-top:28px}
-.btn-dark:hover{opacity:.86}
-.btn-light{background:var(--dark-ink);color:var(--dark)}
-.btn-light:hover{opacity:.86}
-.btn-ghost{border:.5px solid #3A3A3E;color:var(--dark-ink)}
-.btn-ghost:hover{border-color:var(--dark-soft)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.btn-dark{
+  background:var(--ink);color:#fff;margin-top:28px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -1.5px 0 rgba(0,0,0,.35),
+    0 2px 4px rgba(17,17,20,.18),
+    0 8px 20px rgba(17,17,20,.16);
+}
+.btn-dark:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -1.5px 0 rgba(0,0,0,.35),
+    0 4px 8px rgba(17,17,20,.20),
+    0 16px 32px rgba(17,17,20,.22);
+}
+.btn-dark:active{
+  transform:translateY(0);
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,.45),
+    0 1px 2px rgba(17,17,20,.20);
+}
+
+.btn-light{
+  background:var(--dark-ink);color:var(--dark);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 -1.5px 0 rgba(10,10,11,.20),
+    0 2px 6px rgba(0,0,0,.55),
+    0 10px 26px rgba(0,0,0,.5);
+}
+.btn-light:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 -1.5px 0 rgba(10,10,11,.20),
+    0 5px 12px rgba(0,0,0,.6),
+    0 18px 38px rgba(0,0,0,.55);
+}
+.btn-light:active{
+  transform:translateY(0);
+  box-shadow:
+    inset 0 2px 5px rgba(10,10,11,.30),
+    0 1px 3px rgba(0,0,0,.5);
+}
+.btn-light:focus-visible{outline-color:var(--dark-ink)}
 
 /* ---------- precisão ---------- */
 .precisao{background:var(--bg-alt);padding:clamp(64px,9vw,116px) 0}
@@ -119,44 +160,65 @@ h1{
   font-size:12px;font-weight:300;color:var(--muted);
 }
 
-/* ---------- contato ---------- */
-.contato{background:var(--dark);color:var(--dark-ink);padding:clamp(64px,9vw,110px) 0 40px}
-.lead-dark{
-  margin:16px auto 0;max-width:420px;text-align:center;
-  font-size:15px;font-weight:300;color:var(--dark-soft);line-height:1.7;
+/* ---------- contato: painel claro sobre fundo branco ---------- */
+.contato{background:var(--bg);padding:clamp(56px,8vw,104px) 0}
+.painel{
+  display:grid;grid-template-columns:1fr minmax(240px,380px);
+  align-items:center;gap:clamp(24px,4vw,56px);
+  background:linear-gradient(158deg,#ECECEF 0%,#F8F8FA 55%,#F3F3F6 100%);
+  border-radius:28px;
+  padding:clamp(34px,5vw,66px);
 }
-.acoes{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  margin:34px 0 clamp(56px,7vw,86px);
+.painel-texto h2{text-align:left;margin:0}
+.painel-texto p{
+  margin:14px 0 0;max-width:340px;
+  font-size:clamp(14px,1.5vw,17px);font-weight:300;color:var(--ink-soft);line-height:1.7;
 }
-.rodape{
-  display:grid;gap:28px;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  border-top:.5px solid var(--dark-line);padding-top:32px;
+.painel-texto .btn{margin-top:28px}
+.painel-marca{display:flex;justify-content:center}
+#marca{display:block;width:100%;height:clamp(150px,17vw,210px)}
+
+/* ---------- rodapé preto ---------- */
+.rodape{background:var(--dark);color:var(--dark-ink);padding:26px 0}
+.rodape-linha{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
 }
 /* O arquivo é preto; no rodapé escuro ele é invertido para branco. */
-.wordmark-footer{display:block;height:18px;width:auto;filter:invert(1)}
-.rot{
-  display:block;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;
-  color:#5E5E63;
+.wordmark-footer{display:block;height:16px;width:auto;filter:invert(1);flex:none}
+.rodape p{margin:0;font-size:12.5px;font-weight:300;line-height:1.7}
+.rodape-desc{color:#6E6E73;flex:1 1 auto;min-width:180px}
+.rodape-contato{color:#7C7C81;display:flex;gap:16px;flex-wrap:wrap;flex:none}
+.rodape-contato a{color:var(--dark-soft);transition:color .2s}
+.rodape-contato a:hover{color:var(--dark-ink)}
+
+@media (max-width:820px){
+  /* Painel de contato empilha: texto em cima, marca embaixo. */
+  .painel{grid-template-columns:1fr;text-align:center}
+  .painel-texto h2{text-align:center}
+  .painel-texto p{margin-left:auto;margin-right:auto}
+  .painel-marca{order:-1}
+  #marca{height:clamp(120px,26vw,170px)}
+  .rodape-linha{justify-content:center;text-align:center;flex-direction:column;gap:14px}
+  .rodape-contato{justify-content:center}
 }
-.rodape p{margin:10px 0 0;font-size:13px;font-weight:300;color:var(--dark-soft);line-height:1.8}
-.rodape div:first-child p{color:#7C7C81}
 
 @media (max-width:700px){
   /* No celular a quebra manual atrapalha — deixa o texto fluir. */
-  h1 br,.precisao h2 br,.contato h2 br{display:none}
+  h1 br,.precisao h2 br{display:none}
   /* Marca acompanha a largura da tela, senão sobra vão embaixo dela. */
   #scan{height:clamp(150px,42vw,230px)}
 }
 
 @media (max-width:600px){
-  .nav{padding:14px 20px}
-  .nav nav{gap:16px}
-  .acoes .btn{width:100%;text-align:center}
+  .nav{padding:15px 20px}
+  .wordmark img{height:19px}
+  .painel{border-radius:20px}
+  .painel-texto .btn{width:100%;text-align:center}
 }
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn{transition:none}
+  .btn-dark:hover,.btn-light:hover{transform:none}
 }

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap">
 <!-- ?v= evita cache antigo do navegador. Ao alterar css/js, incrementar o número. -->
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=13">
 </head>
 
 <body id="topo">
@@ -26,10 +26,6 @@
   <a class="wordmark" href="#topo">
     <img src="assets/logo-be-medical-wordmark.svg" alt="Be Medical" width="1325" height="223">
   </a>
-  <nav aria-label="Navegação principal">
-    <a href="#precisao">precisão</a>
-    <a href="#contato">contato</a>
-  </nav>
 </header>
 
 <main>
@@ -41,10 +37,10 @@
   <section class="hero">
     <canvas id="scan" aria-hidden="true"></canvas>
     <div class="hero-text">
-      <h1>Um ecossistema de equipamentos e software <br>para análise de pele e capilar.</h1>
-      <p class="benefit">Mais precisão no diagnóstico, mais segurança na conduta, mais prova no resultado.</p>
+      <h1>Um ecossistema de equipamentos e software <br>para análise de pele e capilar</h1>
+      <p class="benefit">Mais precisão no diagnóstico, mais segurança na conduta, mais prova no resultado</p>
       <p class="audience">Para dermatologia clínica e estética</p>
-      <a class="btn btn-dark" href="#contato">Quero na minha clínica</a>
+      <a class="btn btn-dark" href="#contato">Falar com especialista</a>
     </div>
   </section>
 
@@ -55,8 +51,8 @@
        ========================================================== -->
   <section class="precisao" id="precisao">
     <div class="wrap">
-      <h2>Precisão muda tudo <br>o que vem depois.</h2>
-      <p class="lead">O que se vê define o que se faz. E o que se faz define o resultado.</p>
+      <h2>Precisão muda tudo <br>o que vem depois</h2>
+      <p class="lead">O que se vê define o que se faz. E o que se faz define o resultado</p>
 
       <div class="cards">
         <article class="card">
@@ -81,7 +77,7 @@
         </article>
       </div>
 
-      <p class="disclaimer">Imagens ilustrativas.</p>
+      <p class="disclaimer">Imagens ilustrativas</p>
     </div>
   </section>
 
@@ -89,39 +85,37 @@
 
 <!-- ==========================================================
      CONTATO E RODAPÉ
-     Os itens marcados com TROCAR ainda estão com dado de exemplo
+     O botão aponta para wa.link/7tcu0w — para trocar o número
+     de destino, altere o link no painel do próprio wa.link
      ========================================================== -->
-<footer class="contato" id="contato">
+<section class="contato" id="contato">
   <div class="wrap">
-    <h2>Vamos conversar.</h2>
-    <p class="lead-dark">Clínicas, médicos e fabricantes falam com a gente pelo mesmo canal.</p>
-
-    <div class="acoes">
-      <!-- TROCAR: número do WhatsApp no formato 55DDNNNNNNNNN -->
-      <a class="btn btn-light" href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Be%20Medical." target="_blank" rel="noopener">Falar no WhatsApp</a>
-      <!-- TROCAR: e-mail real -->
-      <a class="btn btn-ghost" href="mailto:contato@bemedical.com.br">Enviar um e-mail</a>
+    <div class="painel">
+      <div class="painel-texto">
+        <h2>Vamos conversar</h2>
+        <p>Entre em contato para mais informações</p>
+        <a class="btn btn-dark" href="https://wa.link/7tcu0w" target="_blank" rel="noopener">Falar com especialista</a>
+      </div>
+      <div class="painel-marca">
+        <canvas id="marca" aria-hidden="true"></canvas>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="rodape">
-      <div>
-        <img class="wordmark-footer" src="assets/logo-be-medical-wordmark.svg" alt="Be Medical" width="1325" height="223">
-        <p>Imagem para análise de pele e capilar.<br>São Paulo, Brasil.</p>
-      </div>
-      <div>
-        <span class="rot">Contato</span>
-        <!-- TROCAR: e-mail e telefone reais -->
-        <p>contato@bemedical.com.br<br>+55 11 00000-0000</p>
-      </div>
-      <div>
-        <span class="rot">Empresa</span>
-        <!-- TROCAR: CNPJ e links reais -->
-        <p>CNPJ 00.000.000/0001-00<br>Instagram · LinkedIn</p>
-      </div>
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-linha">
+      <img class="wordmark-footer" src="assets/logo-be-medical-wordmark.svg" alt="Be Medical" width="1325" height="223">
+      <p class="rodape-desc">Equipamentos e software para análise de pele e capilar</p>
+      <p class="rodape-contato">
+        Campinas, SP
+        <a href="mailto:contato@bemedical.com.br">contato@bemedical.com.br</a>
+      </p>
     </div>
   </div>
 </footer>
 
-<script src="assets/scan.js?v=5" defer></script>
+<script src="assets/scan.js?v=6" defer></script>
 </body>
 </html>
